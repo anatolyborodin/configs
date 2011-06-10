@@ -1,0 +1,54 @@
+#setenv	COLORTERM	${TERM}
+setenv	PAGER		"less"
+setenv	EDITOR		"vim"
+setenv	VISUAL		"vim"
+setenv	CLICOLOR
+
+#setenv	GTK_IM_MODULE	ibus
+#setenv	XMODIFIERS	@im=ibus
+#setenv	QT_IM_MODULE	ibus
+
+set	Chost =		'%{\e[0;36m%}'
+set	Cnormal =	'%{\e[0m%}'
+set	Cpath =		'%{\e[0;1;32m%}'
+set	Csep =		'%{\e[0;1;37m%}'
+set	Cshlvl =	'%{\e[0;1;33m%}'
+set	Cuser =		'%{\e[0;1;31m%}'
+set	autolist
+set	color
+set	colorcat
+set	correct =	cmd
+set	histdup =	erase
+set	history =	1000
+set	listjobs =	long
+set	nobeep
+set	notify
+set	prompt =	"${Cuser}%n${Csep}@${Chost}%m${Csep}[${Cshlvl}${shlvl}${Csep}]:${Cpath}%~${Cnormal}>"
+set	savehist =	1000
+set	symlinks =	chase
+set	visiblebell
+unset	Chost
+unset	Cpath
+unset	Csep
+unset	Cshlvl
+unset	Cuser
+
+alias	df		df -ah
+alias	du		du -ach
+alias	j		jobs -l
+alias	ls		ls -AbFhil --color
+alias	md		mkdir
+alias	mkday		mkdir -v -p '`date +%Y%m%d`'
+alias	precmd		date
+alias	psa		ps waxl
+alias	fgrep		fgrep --colour=auto
+alias	grep		grep --colour=auto
+
+bindkey	-k up		history-search-backward
+bindkey	-k down		history-search-forward
+bindkey			complete-word-back
+bindkey			complete-word-fwd
+bindkey 		backward-delete-word
+bindkey			kill-whole-line
+
+setenv	PATH		${PATH}:${HOME}/bin:${HOME}/.cabal/bin
