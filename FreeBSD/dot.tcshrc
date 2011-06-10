@@ -1,4 +1,4 @@
-setenv	COLORTERM	$TERM
+#setenv	COLORTERM	${TERM}
 setenv	PAGER		"less"
 setenv	EDITOR		"vim"
 setenv	VISUAL		"vim"
@@ -23,7 +23,7 @@ set	history =	1000
 set	listjobs =	long
 set	nobeep
 set	notify
-set	prompt =	"${Cuser}%n${Csep}@${Chost}%m${Csep}[${Cshlvl}$shlvl${Csep}]:${Cpath}%~${Cnormal}>"
+set	prompt =	"${Cuser}%n${Csep}@${Chost}%m${Csep}[${Cshlvl}${shlvl}${Csep}]:${Cpath}%~${Cnormal}>"
 set	savehist =	1000
 set	symlinks =	chase
 set	visiblebell
@@ -36,7 +36,6 @@ unset	Cuser
 alias	df		df -ahi
 alias	du		du -khx
 alias	j		jobs -l
-alias	klock		dcop kdesktop KScreensaverIface lock
 alias	ls		ls -AFlos
 alias	md		mkdir
 alias	mkday		mkdir -v -p '`date +%Y%m%d`'
@@ -44,6 +43,8 @@ alias	obex		obexapp -C FTRN -a fractal.mobile -f
 alias	opush		obexapp -C OPUSH -a fractal.mobile -n put
 alias	precmd		date
 alias	psa		ps waxl
+alias	fgrep		fgrep --colour=auto
+alias	grep		grep --colour=auto
 
 bindkey	-k up		history-search-backward
 bindkey	-k down		history-search-forward
@@ -52,4 +53,4 @@ bindkey			complete-word-fwd
 bindkey 		backward-delete-word
 bindkey			kill-whole-line
 
-setenv	PATH		${PATH}:${HOME}/.cabal/bin
+setenv	PATH		${PATH}:${HOME}/bin:${HOME}/.cabal/bin
