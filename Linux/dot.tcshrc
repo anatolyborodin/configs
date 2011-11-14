@@ -3,6 +3,7 @@ setenv	PAGER		"less"
 setenv	EDITOR		"vim"
 setenv	VISUAL		"vim"
 setenv	CLICOLOR
+setenv	GREP_OPTIONS	"--exclude=*~ --exclude=*.swp --exclude=*.bak"
 
 #setenv	GTK_IM_MODULE	ibus
 #setenv	XMODIFIERS	@im=ibus
